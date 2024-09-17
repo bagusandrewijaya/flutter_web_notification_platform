@@ -1,15 +1,16 @@
 import 'dart:html' as html;
 import 'dart:js_util' as js_util;
 import 'package:flutter_web_notification_platform/platformNotification.dart';
-
+import 'package:logger/logger.dart';
+final logger = Logger();
 class PlatformNotificationWeb implements PlatformNotification {
   @override
   void requestPermission() {
     html.Notification.requestPermission().then((permission) {
       if (permission == 'granted') {
-        print('Notification permission granted.');
+        logger.d('Notification permission granted.');
       } else {
-        print('Notification permission denied.');
+         logger.d('Notification permission denied.');
       }
     });
   }
@@ -22,7 +23,7 @@ class PlatformNotificationWeb implements PlatformNotification {
         [title, js_util.jsify({'body': body})],
       );
     } else {
-      print('Notification permission not granted.');
+       logger.d('Notification permission not granted.');
     }
   }
 }
