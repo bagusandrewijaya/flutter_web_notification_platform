@@ -2,7 +2,7 @@
 import 'dart:html' as html;
 import 'dart:js_util' as js_util;
 
-import 'package:flutter_web_notification_platform/platform_notification.dart';
+import 'package:flutter_web_notification_platform/flutter_web_notification_platform.dart';
 
 class PlatformNotificationWeb implements PlatformNotification {
   @override

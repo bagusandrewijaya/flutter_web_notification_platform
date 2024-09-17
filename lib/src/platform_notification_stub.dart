@@ -1,6 +1,6 @@
 // lib/src/platform_notification_stub.dart
 import 'package:logger/logger.dart';
-import '../platform_notification.dart';
+import '../flutter_web_notification_platform.dart';
 
 final logger = Logger();
 
