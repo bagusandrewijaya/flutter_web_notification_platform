@@ -4,7 +4,7 @@ import '../flutter_web_notification_platform.dart';
 
 final logger = Logger();
 
-class PlatformNotificationStub implements PlatformNotification {
+class PlatformNotificationWeb implements PlatformNotification {
   @override
   void requestPermission() {
     logger.d('Web notifications are not supported on this platform.');
