@@ -1,6 +1,6 @@
 name: flutter_web_notification_platform
 description: A Flutter plugin for web notifications using conditional imports.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/bagusandrewijaya/flutter_web_notification_platform
 repository: https://github.com/bagusandrewijaya/flutter_web_notification_platform
 
