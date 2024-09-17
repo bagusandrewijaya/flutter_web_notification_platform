@@ -1,7 +1,10 @@
-import 'package:flutter_web_notification_platform/flutter_web_notification_platform.dart';
+// lib/src/platform_notification_stub.dart
 import 'package:logger/logger.dart';
+import '../platform_notification.dart';
+
 final logger = Logger();
-class PlatformNotificationWeb implements PlatformNotification {
+
+class PlatformNotificationStub implements PlatformNotification {
   @override
   void requestPermission() {
     logger.d('Web notifications are not supported on this platform.');

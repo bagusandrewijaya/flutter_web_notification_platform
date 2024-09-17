@@ -1,19 +1,30 @@
-import 'dart:html';
+// src/platformNotification_web.dart
+import 'dart:html' as html;
+import 'dart:js_util' as js_util;
 
-class PlatformNotification {
-  void sendNotification(String title, String body) {
-    if (Notification.permission == 'granted') {
-      Notification(title, body: body);
-    } else {
-      requestPermission();
-    }
-  }
+import 'package:flutter_web_notification_platform/platform_notification.dart';
 
+class PlatformNotificationWeb implements PlatformNotification {
+  @override
   void requestPermission() {
-    Notification.requestPermission().then((permission) {
+    html.Notification.requestPermission().then((permission) {
       if (permission == 'granted') {
-        print('Permission granted!');
+        print('Notification permission granted.');
+      } else {
+        print('Notification permission denied.');
       }
     });
+  }
+
+  @override
+  void sendNotification(String title, String body) {
+    if (html.Notification.permission == 'granted') {
+      js_util.callConstructor(
+        js_util.getProperty(html.window, 'Notification'),
+        [title, js_util.jsify({'body': body})],
+      );
+    } else {
+      print('Notification permission not granted.');
+    }
   }
 }
