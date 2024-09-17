@@ -1,6 +1,6 @@
 // example/main.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_web_notification_platform/platform_notification.dart';
+import 'package:flutter_web_notification_platform/flutter_web_notification_platform.dart';
 
 void main() {
   runApp(MyApp());

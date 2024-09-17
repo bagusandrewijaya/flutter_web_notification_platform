@@ -1,4 +1,4 @@
-import 'package:flutter_web_notification_platform/platform_notification.dart';
+import 'package:flutter_web_notification_platform/flutter_web_notification_platform.dart';
 import 'package:logger/logger.dart';
 final logger = Logger();
 class PlatformNotificationWeb implements PlatformNotification {
